@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  description: Gives items pricing dynamically
+  title: DynamicPricing
+  version: v1
+servers:
+- url: https://api.visionet.com
+security:
+- ApiKeyAuth: []
+paths:
+  /dynamicPricing:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_dynamicPricing_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_dynamicPricing_post_200_response'
+          description: Success response with calculated pricing details
+      summary: Gets the price details
+components:
+  schemas:
+    _dynamicPricing_post_200_response:
+      example:
+        Result:
+          Reasoning: Reasoning
+          SuggestedPrice: 0.8008281904610115
+      properties:
+        Result:
+          $ref: '#/components/schemas/_dynamicPricing_post_200_response_Result'
+      title: _dynamicPricing_post_200_response
+      type: object
+    _dynamicPricing_post_request:
+      properties:
+        sellingPrice:
+          description: The selling price of the item
+          title: sellingPrice
+          type: number
+        Margin:
+          description: The margin percentage
+          title: Margin
+          type: number
+        Product:
+          description: The name of the product
+          title: Product
+          type: string
+      required:
+      - Margin
+      - Product
+      - sellingPrice
+      title: _dynamicPricing_post_request
+      type: object
+    _dynamicPricing_post_200_response_Result:
+      example:
+        Reasoning: Reasoning
+        SuggestedPrice: 0.8008281904610115
+      properties:
+        SuggestedPrice:
+          description: The calculated suggested price for the product
+          title: SuggestedPrice
+          type: number
+        Reasoning:
+          description: Explanation for the suggested price
+          title: Reasoning
+          type: string
+      required:
+      - Reasoning
+      - SuggestedPrice
+      title: _dynamicPricing_post_200_response_Result
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: Authorization
+      type: apiKey
