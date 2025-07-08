@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  description: Gives items pricing dynamically
+  title: DynamicPricing
+  version: v1
+servers:
+- url: https://api.visionet.com
+security:
+- ApiKeyAuth: []
+paths:
+  /dynamicPricing:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_dynamicPricing_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_dynamicPricing_post_200_response'
+          description: Success response with calculated pricing details
+      summary: Gets the price details
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    _dynamicPricing_post_200_response:
+      example:
+        Result:
+          Reasoning: Reasoning
+          SuggestedPrice: 0.8008281904610115
+      properties:
+        Result:
+          $ref: '#/components/schemas/_dynamicPricing_post_200_response_Result'
+      type: object
+    _dynamicPricing_post_request:
+      properties:
+        sellingPrice:
+          description: The selling price of the item
+          type: number
+        Margin:
+          description: The margin percentage
+          type: number
+        Product:
+          description: The name of the product
+          type: string
+      required:
+      - Margin
+      - Product
+      - sellingPrice
+      type: object
+    _dynamicPricing_post_200_response_Result:
+      example:
+        Reasoning: Reasoning
+        SuggestedPrice: 0.8008281904610115
+      properties:
+        SuggestedPrice:
+          description: The calculated suggested price for the product
+          type: number
+        Reasoning:
+          description: Explanation for the suggested price
+          type: string
+      required:
+      - Reasoning
+      - SuggestedPrice
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: Authorization
+      type: apiKey
