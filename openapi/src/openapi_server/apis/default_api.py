@@ -37,7 +37,7 @@ for _, name, _ in pkgutil.iter_modules(ns_pkg.__path__, ns_pkg.__name__ + "."):
 @router.post(
     "/dynamicPricing",
     responses={
-        200: {"model": DynamicPricingPost200Response, "description": "Success response with calculated pricing details"},
+        200: {"model": DynamicPricingPost200Response, "description": "Successfully calculated dynamic prices"},
     },
     tags=["default"],
     summary="Gets the price details",

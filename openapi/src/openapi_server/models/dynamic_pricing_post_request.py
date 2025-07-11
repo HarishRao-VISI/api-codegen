@@ -31,9 +31,9 @@ class DynamicPricingPostRequest(BaseModel):
     """
     DynamicPricingPostRequest
     """ # noqa: E501
-    selling_price: Union[StrictFloat, StrictInt] = Field(description="The selling price of the item", alias="sellingPrice")
-    margin: Union[StrictFloat, StrictInt] = Field(description="The margin percentage", alias="Margin")
-    product: StrictStr = Field(description="The name of the product", alias="Product")
+    selling_price: Union[StrictFloat, StrictInt] = Field(description="Selling price of the item", alias="sellingPrice")
+    margin: Union[StrictFloat, StrictInt] = Field(description="Margin percentage", alias="Margin")
+    product: StrictStr = Field(description="Name of the product", alias="Product")
     __properties: ClassVar[List[str]] = ["sellingPrice", "Margin", "Product"]
 
     model_config = {

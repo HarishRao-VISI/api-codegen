@@ -22,7 +22,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/_dynamicPricing_post_200_response'
-          description: Success response with calculated pricing details
+          description: Successfully calculated dynamic prices
       summary: Gets the price details
       x-content-type: application/json
       x-accepts:
@@ -41,13 +41,13 @@ components:
     _dynamicPricing_post_request:
       properties:
         sellingPrice:
-          description: The selling price of the item
+          description: Selling price of the item
           type: number
         Margin:
-          description: The margin percentage
+          description: Margin percentage
           type: number
         Product:
-          description: The name of the product
+          description: Name of the product
           type: string
       required:
       - Margin
@@ -60,10 +60,10 @@ components:
         SuggestedPrice: 0.8008281904610115
       properties:
         SuggestedPrice:
-          description: The calculated suggested price for the product
+          description: Suggested price for the item
           type: number
         Reasoning:
-          description: Explanation for the suggested price
+          description: Explanation for the suggested price calculation
           type: string
       required:
       - Reasoning

@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("_dynamicPricing_post_request")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-08T20:21:18.246317500+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-11T20:06:23.427532300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DynamicPricingPostRequest {
 
   private BigDecimal sellingPrice;
@@ -49,11 +49,11 @@ public class DynamicPricingPostRequest {
   }
 
   /**
-   * The selling price of the item
+   * Selling price of the item
    * @return sellingPrice
    */
   @NotNull @Valid 
-  @Schema(name = "sellingPrice", description = "The selling price of the item", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "sellingPrice", description = "Selling price of the item", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("sellingPrice")
   public BigDecimal getSellingPrice() {
     return sellingPrice;
@@ -69,11 +69,11 @@ public class DynamicPricingPostRequest {
   }
 
   /**
-   * The margin percentage
+   * Margin percentage
    * @return margin
    */
   @NotNull @Valid 
-  @Schema(name = "Margin", description = "The margin percentage", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "Margin", description = "Margin percentage", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("Margin")
   public BigDecimal getMargin() {
     return margin;
@@ -89,11 +89,11 @@ public class DynamicPricingPostRequest {
   }
 
   /**
-   * The name of the product
+   * Name of the product
    * @return product
    */
   @NotNull 
-  @Schema(name = "Product", description = "The name of the product", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "Product", description = "Name of the product", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("Product")
   public String getProduct() {
     return product;

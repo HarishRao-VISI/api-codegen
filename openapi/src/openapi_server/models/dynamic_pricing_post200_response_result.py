@@ -31,8 +31,8 @@ class DynamicPricingPost200ResponseResult(BaseModel):
     """
     DynamicPricingPost200ResponseResult
     """ # noqa: E501
-    suggested_price: Union[StrictFloat, StrictInt] = Field(description="The calculated suggested price for the product", alias="SuggestedPrice")
-    reasoning: StrictStr = Field(description="Explanation for the suggested price", alias="Reasoning")
+    suggested_price: Union[StrictFloat, StrictInt] = Field(description="Suggested price for the item", alias="SuggestedPrice")
+    reasoning: StrictStr = Field(description="Explanation for the suggested price calculation", alias="Reasoning")
     __properties: ClassVar[List[str]] = ["SuggestedPrice", "Reasoning"]
 
     model_config = {

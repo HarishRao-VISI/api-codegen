@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-08T20:21:18.246317500+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-11T20:06:23.427532300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 @Validated
 @Tag(name = "dynamicPricing", description = "the dynamicPricing API")
 public interface DynamicPricingApi {
@@ -46,13 +46,13 @@ public interface DynamicPricingApi {
      * POST /dynamicPricing : Gets the price details
      *
      * @param dynamicPricingPostRequest  (required)
-     * @return Success response with calculated pricing details (status code 200)
+     * @return Successfully calculated dynamic prices (status code 200)
      */
     @Operation(
         operationId = "dynamicPricingPost",
         summary = "Gets the price details",
         responses = {
-            @ApiResponse(responseCode = "200", description = "Success response with calculated pricing details", content = {
+            @ApiResponse(responseCode = "200", description = "Successfully calculated dynamic prices", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = DynamicPricingPost200Response.class))
             })
         },
