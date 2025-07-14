@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-14T14:10:46.505828600+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-14T14:11:11.700922300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 @Validated
 @Tag(name = "dynamicPricing", description = "the dynamicPricing API")
 public interface DynamicPricingApi {
