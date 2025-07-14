@@ -1,7 +1,7 @@
 package org.openapitools.api;
 
-import org.openapitools.model.DynamicPricingPost200Response;
-import org.openapitools.model.DynamicPricingPostRequest;
+import org.openapitools.model.DiscountRequest;
+import org.openapitools.model.DynamicPricingResponse;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-11T20:06:23.427532300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-14T14:09:07.595863300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 @Controller
 @RequestMapping("${openapi.dynamicPricing.base-path:}")
 public class DynamicPricingApiController implements DynamicPricingApi {

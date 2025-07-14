@@ -5,8 +5,6 @@ info:
   version: v1
 servers:
 - url: https://api.visionet.com
-security:
-- ApiKeyAuth: []
 paths:
   /dynamicPricing:
     post:
@@ -14,56 +12,71 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/_dynamicPricing_post_request'
+              $ref: '#/components/schemas/DiscountRequest'
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_dynamicPricing_post_200_response'
-          description: Successfully calculated dynamic prices
+                $ref: '#/components/schemas/DynamicPricingResponse'
+          description: Successful response
+      security:
+      - ApiKeyAuth: []
       summary: Gets the price details
       x-content-type: application/json
       x-accepts:
       - application/json
 components:
   schemas:
-    _dynamicPricing_post_200_response:
+    DiscountRequest:
+      example:
+        Discount:
+          sellingPrice: 0.8008281904610115
+          Product: Product
+          Margin: 6.027456183070403
+      properties:
+        Discount:
+          $ref: '#/components/schemas/DiscountRequest_Discount'
+      required:
+      - Discount
+      type: object
+    DynamicPricingResponse:
       example:
         Result:
           Reasoning: Reasoning
           SuggestedPrice: 0.8008281904610115
       properties:
         Result:
-          $ref: '#/components/schemas/_dynamicPricing_post_200_response_Result'
+          $ref: '#/components/schemas/DynamicPricingResponse_Result'
+      required:
+      - Result
       type: object
-    _dynamicPricing_post_request:
+    DiscountRequest_Discount:
+      example:
+        sellingPrice: 0.8008281904610115
+        Product: Product
+        Margin: 6.027456183070403
       properties:
         sellingPrice:
-          description: Selling price of the item
           type: number
         Margin:
-          description: Margin percentage
           type: number
         Product:
-          description: Name of the product
           type: string
       required:
       - Margin
       - Product
       - sellingPrice
       type: object
-    _dynamicPricing_post_200_response_Result:
+    DynamicPricingResponse_Result:
       example:
         Reasoning: Reasoning
         SuggestedPrice: 0.8008281904610115
       properties:
         SuggestedPrice:
-          description: Suggested price for the item
           type: number
         Reasoning:
-          description: Explanation for the suggested price calculation
           type: string
       required:
       - Reasoning

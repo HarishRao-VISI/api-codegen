@@ -2,8 +2,8 @@
 
 from typing import ClassVar, Dict, List, Tuple  # noqa: F401
 
-from openapi_server.models.dynamic_pricing_post200_response import DynamicPricingPost200Response
-from openapi_server.models.dynamic_pricing_post_request import DynamicPricingPostRequest
+from openapi_server.models.discount_request import DiscountRequest
+from openapi_server.models.dynamic_pricing_response import DynamicPricingResponse
 from openapi_server.security_api import get_token_ApiKeyAuth
 
 class BaseDefaultApi:
@@ -14,6 +14,6 @@ class BaseDefaultApi:
         BaseDefaultApi.subclasses = BaseDefaultApi.subclasses + (cls,)
     async def dynamic_pricing_post(
         self,
-        dynamic_pricing_post_request: DynamicPricingPostRequest,
-    ) -> DynamicPricingPost200Response:
+        discount_request: DiscountRequest,
+    ) -> DynamicPricingResponse:
         ...

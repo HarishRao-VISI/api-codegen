@@ -3,8 +3,8 @@
 from fastapi.testclient import TestClient
 
 
-from openapi_server.models.dynamic_pricing_post200_response import DynamicPricingPost200Response  # noqa: F401
-from openapi_server.models.dynamic_pricing_post_request import DynamicPricingPostRequest  # noqa: F401
+from openapi_server.models.discount_request import DiscountRequest  # noqa: F401
+from openapi_server.models.dynamic_pricing_response import DynamicPricingResponse  # noqa: F401
 
 
 def test_dynamic_pricing_post(client: TestClient):
@@ -12,7 +12,7 @@ def test_dynamic_pricing_post(client: TestClient):
 
     Gets the price details
     """
-    dynamic_pricing_post_request = openapi_server.DynamicPricingPostRequest()
+    discount_request = {"discount":{"selling_price":0.8008281904610115,"product":"Product","margin":6.027456183070403}}
 
     headers = {
         "ApiKeyAuth": "special-key",
@@ -22,7 +22,7 @@ def test_dynamic_pricing_post(client: TestClient):
     #    "POST",
     #    "/dynamicPricing",
     #    headers=headers,
-    #    json=dynamic_pricing_post_request,
+    #    json=discount_request,
     #)
 
     # uncomment below to assert the status code of the HTTP response

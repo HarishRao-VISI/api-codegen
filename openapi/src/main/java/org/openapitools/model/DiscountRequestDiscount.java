@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("DiscountRequest_Discount")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-14T14:09:07.595863300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-14T14:10:46.505828600+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DiscountRequestDiscount {
 
   private BigDecimal sellingPrice;
