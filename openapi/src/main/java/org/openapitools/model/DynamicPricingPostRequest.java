@@ -5,7 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import java.math.BigDecimal;
+import org.openapitools.model.DynamicPricingPostRequestDiscount;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -21,14 +21,10 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("_dynamicPricing_post_request")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-11T20:06:23.427532300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-16T13:34:33.605180100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DynamicPricingPostRequest {
 
-  private BigDecimal sellingPrice;
-
-  private BigDecimal margin;
-
-  private String product;
+  private DynamicPricingPostRequestDiscount discount;
 
   public DynamicPricingPostRequest() {
     super();
@@ -37,70 +33,28 @@ public class DynamicPricingPostRequest {
   /**
    * Constructor with only required parameters
    */
-  public DynamicPricingPostRequest(BigDecimal sellingPrice, BigDecimal margin, String product) {
-    this.sellingPrice = sellingPrice;
-    this.margin = margin;
-    this.product = product;
+  public DynamicPricingPostRequest(DynamicPricingPostRequestDiscount discount) {
+    this.discount = discount;
   }
 
-  public DynamicPricingPostRequest sellingPrice(BigDecimal sellingPrice) {
-    this.sellingPrice = sellingPrice;
+  public DynamicPricingPostRequest discount(DynamicPricingPostRequestDiscount discount) {
+    this.discount = discount;
     return this;
   }
 
   /**
-   * Selling price of the item
-   * @return sellingPrice
+   * Get discount
+   * @return discount
    */
   @NotNull @Valid 
-  @Schema(name = "sellingPrice", description = "Selling price of the item", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("sellingPrice")
-  public BigDecimal getSellingPrice() {
-    return sellingPrice;
+  @Schema(name = "Discount", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("Discount")
+  public DynamicPricingPostRequestDiscount getDiscount() {
+    return discount;
   }
 
-  public void setSellingPrice(BigDecimal sellingPrice) {
-    this.sellingPrice = sellingPrice;
-  }
-
-  public DynamicPricingPostRequest margin(BigDecimal margin) {
-    this.margin = margin;
-    return this;
-  }
-
-  /**
-   * Margin percentage
-   * @return margin
-   */
-  @NotNull @Valid 
-  @Schema(name = "Margin", description = "Margin percentage", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("Margin")
-  public BigDecimal getMargin() {
-    return margin;
-  }
-
-  public void setMargin(BigDecimal margin) {
-    this.margin = margin;
-  }
-
-  public DynamicPricingPostRequest product(String product) {
-    this.product = product;
-    return this;
-  }
-
-  /**
-   * Name of the product
-   * @return product
-   */
-  @NotNull 
-  @Schema(name = "Product", description = "Name of the product", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("Product")
-  public String getProduct() {
-    return product;
-  }
-
-  public void setProduct(String product) {
-    this.product = product;
+  public void setDiscount(DynamicPricingPostRequestDiscount discount) {
+    this.discount = discount;
   }
 
   @Override
@@ -112,23 +66,19 @@ public class DynamicPricingPostRequest {
       return false;
     }
     DynamicPricingPostRequest dynamicPricingPostRequest = (DynamicPricingPostRequest) o;
-    return Objects.equals(this.sellingPrice, dynamicPricingPostRequest.sellingPrice) &&
-        Objects.equals(this.margin, dynamicPricingPostRequest.margin) &&
-        Objects.equals(this.product, dynamicPricingPostRequest.product);
+    return Objects.equals(this.discount, dynamicPricingPostRequest.discount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sellingPrice, margin, product);
+    return Objects.hash(discount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DynamicPricingPostRequest {\n");
-    sb.append("    sellingPrice: ").append(toIndentedString(sellingPrice)).append("\n");
-    sb.append("    margin: ").append(toIndentedString(margin)).append("\n");
-    sb.append("    product: ").append(toIndentedString(product)).append("\n");
+    sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

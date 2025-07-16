@@ -6,10 +6,10 @@ src/main/java/org/openapitools/api/ApiUtil.java
 src/main/java/org/openapitools/api/DynamicPricingApi.java
 src/main/java/org/openapitools/configuration/HomeController.java
 src/main/java/org/openapitools/configuration/SpringDocConfiguration.java
-src/main/java/org/openapitools/model/DiscountRequest.java
-src/main/java/org/openapitools/model/DiscountRequestDiscount.java
-src/main/java/org/openapitools/model/DynamicPricingResponse.java
-src/main/java/org/openapitools/model/DynamicPricingResponseResult.java
+src/main/java/org/openapitools/model/DynamicPricingPost200Response.java
+src/main/java/org/openapitools/model/DynamicPricingPost200ResponseResult.java
+src/main/java/org/openapitools/model/DynamicPricingPostRequest.java
+src/main/java/org/openapitools/model/DynamicPricingPostRequestDiscount.java
 src/main/resources/application.properties
 src/main/resources/openapi.yaml
 src/test/java/org/openapitools/OpenApiGeneratorApplicationTests.java

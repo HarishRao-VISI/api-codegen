@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("_dynamicPricing_post_200_response_Result")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-11T20:06:23.427532300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-16T13:34:33.605180100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DynamicPricingPost200ResponseResult {
 
   private BigDecimal suggestedPrice;
@@ -46,11 +46,11 @@ public class DynamicPricingPost200ResponseResult {
   }
 
   /**
-   * Suggested price for the item
+   * The suggested price for the product
    * @return suggestedPrice
    */
   @NotNull @Valid 
-  @Schema(name = "SuggestedPrice", description = "Suggested price for the item", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "SuggestedPrice", description = "The suggested price for the product", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("SuggestedPrice")
   public BigDecimal getSuggestedPrice() {
     return suggestedPrice;
@@ -66,11 +66,11 @@ public class DynamicPricingPost200ResponseResult {
   }
 
   /**
-   * Explanation for the suggested price calculation
+   * Explanation behind the suggested price
    * @return reasoning
    */
   @NotNull 
-  @Schema(name = "Reasoning", description = "Explanation for the suggested price calculation", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "Reasoning", description = "Explanation behind the suggested price", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("Reasoning")
   public String getReasoning() {
     return reasoning;

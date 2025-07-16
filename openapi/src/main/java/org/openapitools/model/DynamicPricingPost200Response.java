@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("_dynamicPricing_post_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-11T20:06:23.427532300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-16T13:34:33.605180100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DynamicPricingPost200Response {
 
   private DynamicPricingPost200ResponseResult result;

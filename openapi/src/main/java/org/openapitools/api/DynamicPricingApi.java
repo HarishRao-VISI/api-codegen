@@ -5,8 +5,8 @@
  */
 package org.openapitools.api;
 
-import org.openapitools.model.DiscountRequest;
-import org.openapitools.model.DynamicPricingResponse;
+import org.openapitools.model.DynamicPricingPost200Response;
+import org.openapitools.model.DynamicPricingPostRequest;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-14T14:11:11.700922300+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-16T13:34:33.605180100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 @Validated
 @Tag(name = "dynamicPricing", description = "the dynamicPricing API")
 public interface DynamicPricingApi {
@@ -45,15 +45,15 @@ public interface DynamicPricingApi {
     /**
      * POST /dynamicPricing : Gets the price details
      *
-     * @param discountRequest  (required)
-     * @return Successful response (status code 200)
+     * @param dynamicPricingPostRequest Input data required to calculate dynamic pricing (required)
+     * @return Dynamic pricing result (status code 200)
      */
     @Operation(
         operationId = "dynamicPricingPost",
         summary = "Gets the price details",
         responses = {
-            @ApiResponse(responseCode = "200", description = "Successful response", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = DynamicPricingResponse.class))
+            @ApiResponse(responseCode = "200", description = "Dynamic pricing result", content = {
+                @Content(mediaType = "application/json", schema = @Schema(implementation = DynamicPricingPost200Response.class))
             })
         },
         security = {
@@ -67,8 +67,8 @@ public interface DynamicPricingApi {
         consumes = { "application/json" }
     )
     
-    default ResponseEntity<DynamicPricingResponse> dynamicPricingPost(
-        @Parameter(name = "DiscountRequest", description = "", required = true) @Valid @RequestBody DiscountRequest discountRequest
+    default ResponseEntity<DynamicPricingPost200Response> dynamicPricingPost(
+        @Parameter(name = "DynamicPricingPostRequest", description = "Input data required to calculate dynamic pricing", required = true) @Valid @RequestBody DynamicPricingPostRequest dynamicPricingPostRequest
     ) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
