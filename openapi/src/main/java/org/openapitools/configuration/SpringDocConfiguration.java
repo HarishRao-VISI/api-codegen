@@ -20,7 +20,7 @@ public class SpringDocConfiguration {
                         new Info()
                                 .title("DynamicPricing")
                                 .description("Gives items pricing dynamically.")
-                                .version("V1")
+                                .version("v1")
                 )
                 .components(
                         new Components()

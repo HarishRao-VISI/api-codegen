@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("_dynamicPricing_post_request_Discount")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-17T21:09:16.544668400+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-29T20:05:31.368357100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DynamicPricingPostRequestDiscount {
 
   private BigDecimal sellingPrice;
@@ -30,30 +30,17 @@ public class DynamicPricingPostRequestDiscount {
 
   private String product;
 
-  public DynamicPricingPostRequestDiscount() {
-    super();
-  }
-
-  /**
-   * Constructor with only required parameters
-   */
-  public DynamicPricingPostRequestDiscount(BigDecimal sellingPrice, BigDecimal margin, String product) {
-    this.sellingPrice = sellingPrice;
-    this.margin = margin;
-    this.product = product;
-  }
-
   public DynamicPricingPostRequestDiscount sellingPrice(BigDecimal sellingPrice) {
     this.sellingPrice = sellingPrice;
     return this;
   }
 
   /**
-   * Selling price of the item
+   * Get sellingPrice
    * @return sellingPrice
    */
-  @NotNull @Valid 
-  @Schema(name = "sellingPrice", description = "Selling price of the item", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Valid 
+  @Schema(name = "sellingPrice", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("sellingPrice")
   public BigDecimal getSellingPrice() {
     return sellingPrice;
@@ -69,11 +56,11 @@ public class DynamicPricingPostRequestDiscount {
   }
 
   /**
-   * Margin percentage for the item
+   * Get margin
    * @return margin
    */
-  @NotNull @Valid 
-  @Schema(name = "Margin", description = "Margin percentage for the item", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Valid 
+  @Schema(name = "Margin", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("Margin")
   public BigDecimal getMargin() {
     return margin;
@@ -89,11 +76,11 @@ public class DynamicPricingPostRequestDiscount {
   }
 
   /**
-   * Name of the product
+   * Get product
    * @return product
    */
-  @NotNull 
-  @Schema(name = "Product", description = "Name of the product", requiredMode = Schema.RequiredMode.REQUIRED)
+  
+  @Schema(name = "Product", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("Product")
   public String getProduct() {
     return product;

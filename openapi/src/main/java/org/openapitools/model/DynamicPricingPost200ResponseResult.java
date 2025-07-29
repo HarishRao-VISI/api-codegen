@@ -21,24 +21,12 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("_dynamicPricing_post_200_response_Result")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-17T21:09:16.544668400+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-29T20:05:31.368357100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 public class DynamicPricingPost200ResponseResult {
 
   private BigDecimal suggestedPrice;
 
   private String reasoning;
-
-  public DynamicPricingPost200ResponseResult() {
-    super();
-  }
-
-  /**
-   * Constructor with only required parameters
-   */
-  public DynamicPricingPost200ResponseResult(BigDecimal suggestedPrice, String reasoning) {
-    this.suggestedPrice = suggestedPrice;
-    this.reasoning = reasoning;
-  }
 
   public DynamicPricingPost200ResponseResult suggestedPrice(BigDecimal suggestedPrice) {
     this.suggestedPrice = suggestedPrice;
@@ -46,11 +34,11 @@ public class DynamicPricingPost200ResponseResult {
   }
 
   /**
-   * The suggested price for the product
+   * Get suggestedPrice
    * @return suggestedPrice
    */
-  @NotNull @Valid 
-  @Schema(name = "SuggestedPrice", description = "The suggested price for the product", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Valid 
+  @Schema(name = "SuggestedPrice", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("SuggestedPrice")
   public BigDecimal getSuggestedPrice() {
     return suggestedPrice;
@@ -66,11 +54,11 @@ public class DynamicPricingPost200ResponseResult {
   }
 
   /**
-   * Explanation behind the suggested price
+   * Get reasoning
    * @return reasoning
    */
-  @NotNull 
-  @Schema(name = "Reasoning", description = "Explanation behind the suggested price", requiredMode = Schema.RequiredMode.REQUIRED)
+  
+  @Schema(name = "Reasoning", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("Reasoning")
   public String getReasoning() {
     return reasoning;

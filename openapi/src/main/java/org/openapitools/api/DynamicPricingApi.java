@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-17T21:09:16.544668400+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-07-29T20:05:31.368357100+05:30[Asia/Colombo]", comments = "Generator version: 7.9.0")
 @Validated
 @Tag(name = "dynamicPricing", description = "the dynamicPricing API")
 public interface DynamicPricingApi {
@@ -43,16 +43,16 @@ public interface DynamicPricingApi {
     }
 
     /**
-     * POST /dynamicPricing : Gets the price details
+     * POST /dynamicPricing : Gets competitive price details.
      *
-     * @param dynamicPricingPostRequest Input data required to calculate dynamic pricing (required)
-     * @return Dynamic pricing result (status code 200)
+     * @param dynamicPricingPostRequest  (required)
+     * @return Successful response, returns a suggested price and reasoning. (status code 200)
      */
     @Operation(
         operationId = "dynamicPricingPost",
-        summary = "Gets the price details",
+        summary = "Gets competitive price details.",
         responses = {
-            @ApiResponse(responseCode = "200", description = "Dynamic pricing result", content = {
+            @ApiResponse(responseCode = "200", description = "Successful response, returns a suggested price and reasoning.", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = DynamicPricingPost200Response.class))
             })
         },
@@ -68,7 +68,7 @@ public interface DynamicPricingApi {
     )
     
     default ResponseEntity<DynamicPricingPost200Response> dynamicPricingPost(
-        @Parameter(name = "DynamicPricingPostRequest", description = "Input data required to calculate dynamic pricing", required = true) @Valid @RequestBody DynamicPricingPostRequest dynamicPricingPostRequest
+        @Parameter(name = "DynamicPricingPostRequest", description = "", required = true) @Valid @RequestBody DynamicPricingPostRequest dynamicPricingPostRequest
     ) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {

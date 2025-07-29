@@ -2,9 +2,11 @@ openapi: 3.0.0
 info:
   description: Gives items pricing dynamically.
   title: DynamicPricing
-  version: V1
+  version: v1
 servers:
 - url: https://api.visionet.com
+security:
+- ApiKeyAuth: []
 paths:
   /dynamicPricing:
     post:
@@ -13,7 +15,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/_dynamicPricing_post_request'
-        description: Input data required to calculate dynamic pricing
         required: true
       responses:
         "200":
@@ -21,10 +22,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/_dynamicPricing_post_200_response'
-          description: Dynamic pricing result
-      security:
-      - ApiKeyAuth: []
-      summary: Gets the price details
+          description: "Successful response, returns a suggested price and reasoning."
+      summary: Gets competitive price details.
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -43,8 +42,6 @@ components:
       properties:
         Discount:
           $ref: '#/components/schemas/_dynamicPricing_post_request_Discount'
-      required:
-      - Discount
       type: object
     _dynamicPricing_post_200_response_Result:
       example:
@@ -52,30 +49,18 @@ components:
         SuggestedPrice: 0.8008281904610115
       properties:
         SuggestedPrice:
-          description: The suggested price for the product
           type: number
         Reasoning:
-          description: Explanation behind the suggested price
           type: string
-      required:
-      - Reasoning
-      - SuggestedPrice
       type: object
     _dynamicPricing_post_request_Discount:
       properties:
         sellingPrice:
-          description: Selling price of the item
           type: number
         Margin:
-          description: Margin percentage for the item
           type: number
         Product:
-          description: Name of the product
           type: string
-      required:
-      - Margin
-      - Product
-      - sellingPrice
       type: object
   securitySchemes:
     ApiKeyAuth:
